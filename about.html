@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Us — Stellar Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://res.cloudinary.com/det5cjrev/image/upload/v1757593028/267acfde-1fe9-4b59-b94a-bd2036be491a_qhxijv.png" rel="icon">
+  <style>
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --glass:rgba(255,255,255,0.04);
+      --radius:14px;
+      --ff-sans:'Inter',system-ui,Arial;
+      --ff-display:'Playfair Display',serif;
+      --max-width:1200px;
+    }
+    body {
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,#071026 0%, #081022 45%, #071228 100%);
+      color:#e6eef6;
+      line-height:1.5;
+    }
+    .container {max-width:var(--max-width);margin:0 auto;padding:40px 20px;}
+    header {display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+    header a {text-decoration:none;color:var(--muted);font-weight:600;margin-left:16px;}
+    header a:hover {color:white;}
+    .logo {width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:#04202a;}
+    /* Hero */
+    .hero {text-align:center;padding:80px 20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));border-radius:var(--radius);margin-bottom:40px;}
+    .hero h1 {font-family:var(--ff-display);font-size:40px;margin:0;color:#04202a;}
+    .hero p {max-width:650px;margin:16px auto;color:#04202a;font-size:18px;}
+    .btn {padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;margin-top:16px;}
+    .btn.cta {background:#04202a;color:white;}
+    .btn.outline {border:2px solid #04202a;color:#04202a;}
+    /* Sections */
+    .split {display:flex;flex-wrap:wrap;gap:40px;align-items:center;margin:60px 0;}
+    .split img {flex:1;max-width:480px;border-radius:var(--radius);}
+    .split .text {flex:1;min-width:300px;}
+    .split h2 {font-family:var(--ff-display);}
+    .muted {color:var(--muted);}
+    /* Values */
+    .grid {display:grid;gap:20px;}
+    .three-up {grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .card {background:var(--glass);padding:20px;border-radius:var(--radius);transition:transform .25s ease;}
+    .card:hover {transform:translateY(-6px);border:1px solid var(--accent);}
+    .card h3 {margin:0 0 8px;font-family:var(--ff-display);}
+    .card p {margin:0;color:var(--muted);}
+    /* Faculty */
+    .faculty-grid {display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:40px 0;}
+    .faculty {background:var(--glass);padding:20px;border-radius:var(--radius);text-align:center;transition:transform .25s ease;}
+    .faculty:hover {transform:translateY(-6px);border:1px solid var(--accent);}
+    .faculty img {width:100%;height:220px;object-fit:cover;border-radius:var(--radius);margin-bottom:12px;}
+    .faculty h4 {margin:8px 0 4px;}
+    .faculty p {margin:0;color:var(--muted);font-size:14px;}
+    footer {text-align:center;padding:20px;color:var(--muted);font-size:14px;margin-top:40px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">SA</div>
+        <h2>Stellar Academy</h2>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" style="color:white">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>About Stellar Academy</h1>
+      <p>A place where tradition meets innovation, and students are empowered to dream, create, and achieve.</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="split">
+      <div class="text">
+        <h2>Our Story</h2>
+        <p class="muted">Founded in 1998, Stellar Academy began as a small community school with just 60 students. Today, we are proud to be one of the leading independent schools in the region, offering a rigorous academic program alongside diverse opportunities in arts, athletics, and leadership.</p>
+        <p class="muted">Our philosophy is simple: education should ignite curiosity, build resilience, and cultivate character. We blend tradition with modern pedagogy to create a learning environment that is both challenging and supportive.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" alt="School building">
+    </section>
+
+    <!-- Mission & Values -->
+    <section>
+      <h2 style="font-family:var(--ff-display);margin-bottom:20px">Our Mission & Values</h2>
+      <div class="grid three-up">
+        <div class="card">
+          <h3>Excellence</h3>
+          <p>We strive for the highest standards in academics, arts, and athletics, empowering students to achieve their personal best.</p>
+        </div>
+        <div class="card">
+          <h3>Innovation</h3>
+          <p>Our programs encourage creativity, critical thinking, and problem-solving through experiential and project-based learning.</p>
+        </div>
+        <div class="card">
+          <h3>Community</h3>
+          <p>We foster a culture of kindness, respect, and responsibility where every student feels valued and supported.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Faculty -->
+    <section>
+      <h2 style="font-family:var(--ff-display);margin:40px 0 20px">Leadership & Faculty</h2>
+      <div class="faculty-grid">
+        <div class="faculty">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Principal">
+          <h4>Dr. Angela Rivera</h4>
+          <p>Principal</p>
+        </div>
+        <div class="faculty">
+          <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1757592180/download_drmgd2.jpg" alt="Vice Principal">
+          <h4>Mrs. Sarah Witkins</h4>
+          <p>Vice Principal</p>
+        </div>
+        <div class="faculty">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" alt="Teacher">
+          <h4>Ms. Sophie Laurent</h4>
+          <p>Head of Arts</p>
+        </div>
+        <div class="faculty">
+          <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1757592180/download_1_ag8z8o.jpg" alt="Teacher">
+          <h4>Mr. Karim Okoye</h4>
+          <p>Head of Science</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align:center;margin:60px 0">
+      <h2 style="font-family:var(--ff-display)">Discover More</h2>
+      <p class="muted">Learn about our diverse programs and explore how to join our community.</p>
+      <a href="programs.html" class="btn cta">Explore Programs</a>
+      <a href="admissions.html" class="btn outline">Admissions Info</a>
+    </section>
+
+    <footer>
+      &copy; 2025 Stellar Academy — All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

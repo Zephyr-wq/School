@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us — Stellar Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://res.cloudinary.com/det5cjrev/image/upload/v1757593028/267acfde-1fe9-4b59-b94a-bd2036be491a_qhxijv.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0f1724;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --glass:rgba(255,255,255,0.04);
+      --radius:14px;
+      --ff-sans:'Inter',system-ui,Arial;
+      --ff-display:'Playfair Display',serif;
+      --max-width:1200px;
+    }
+    body {
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,#071026 0%, #081022 45%, #071228 100%);
+      color:#e6eef6;
+      line-height:1.5;
+    }
+    .container {max-width:var(--max-width);margin:0 auto;padding:40px 20px;}
+    header {display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+    header a {text-decoration:none;color:var(--muted);font-weight:600;margin-left:16px;}
+    header a:hover {color:white;}
+    .logo {width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:#04202a;}
+    /* Hero */
+    .hero {text-align:center;padding:80px 20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));border-radius:var(--radius);margin-bottom:40px;}
+    .hero h1 {font-family:var(--ff-display);font-size:40px;margin:0;color:#04202a;}
+    .hero p {max-width:650px;margin:16px auto;color:#04202a;font-size:18px;}
+    /* Contact form */
+    .contact-section {display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:60px;}
+    .contact-form, .contact-info {flex:1;min-width:300px;}
+    form {display:grid;gap:16px;}
+    input, textarea, select {
+      background:var(--glass);
+      border:none;
+      padding:14px;
+      border-radius:var(--radius);
+      color:white;
+      font-size:14px;
+    }
+    textarea {min-height:140px;resize:vertical;}
+    .form-row {display:flex;gap:16px;flex-wrap:wrap;}
+    .btn {padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;margin-top:10px;}
+    .btn.cta {background:#04202a;color:white;}
+    .btn.outline {border:2px solid #04202a;color:#04202a;}
+    /* Contact Info */
+    .info-item {background:var(--glass);padding:18px;border-radius:var(--radius);margin-bottom:16px;}
+    .info-item h4 {margin:0 0 6px;font-family:var(--ff-display);}
+    .info-item p {margin:0;color:var(--muted);}
+    /* Map placeholder */
+    .map-placeholder {
+      background:var(--glass);
+      border-radius:var(--radius);
+      height:240px;
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+      font-size:16px;
+      margin-top:20px;
+    }
+    /* Footer */
+    footer {text-align:center;padding:20px;color:var(--muted);font-size:14px;margin-top:40px;}
+    @media(max-width:768px){.contact-section{flex-direction:column;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">SA</div>
+        <h2>Stellar Academy</h2>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html" style="color:white">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Get in Touch</h1>
+      <p>We’re here to answer your questions and guide you through every step of your Stellar Academy journey.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <!-- Form -->
+      <div class="contact-form">
+        <h2 style="font-family:var(--ff-display);margin-bottom:16px">Send a Message</h2>
+        <form action="https://formspree.io/f/mpwjbgdj" method="post" novalidate>
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          <input type="tel" name="phone" placeholder="Phone (optional)">
+          <select name="interest" aria-label="Reason for Contact">
+            <option>General Inquiry</option>
+            <option>Admissions</option>
+            <option>Visit / Open Day</option>
+          </select>
+          <textarea name="message" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn cta">Send Message</button>
+          <a href="admissions.html" class="btn outline">Apply Online</a>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="contact-info">
+        <h2 style="font-family:var(--ff-display);margin-bottom:16px">Contact Details</h2>
+        <div class="info-item">
+          <h4>Address</h4>
+          <p>123 Learning Lane, City, Country</p>
+        </div>
+        <div class="info-item">
+          <h4>Phone</h4>
+          <p>+234 810 000 0000</p>
+        </div>
+        <div class="info-item">
+          <h4>Email</h4>
+          <p>info@stellaracademy.edu</p>
+        </div>
+        <div class="map-placeholder">Map Placeholder — Embed Google Map Here</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align:center;margin-bottom:60px">
+      <h2 style="font-family:var(--ff-display)">Visit or Apply</h2>
+      <p class="muted">Schedule a visit or start your application online today.</p>
+      <a href="admissions.html" class="btn cta">Apply Now</a>
+      <a href="index.html" class="btn outline">Back to Home</a>
+    </section>
+
+    <footer>
+      &copy; 2025 Stellar Academy — All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

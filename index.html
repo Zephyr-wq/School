@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stellar Academy — Inspiring Lifelong Learners</title>
+  <meta name="description" content="Stellar Academy — a modern, accessible school website template built with HTML & CSS only.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://res.cloudinary.com/det5cjrev/image/upload/v1757593028/267acfde-1fe9-4b59-b94a-bd2036be491a_qhxijv.png" rel="icon">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* mint */
+      --accent-2:#60a5fa; /* sky */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1200px;
+      --ff-sans: 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+      --ff-display: 'Playfair Display', serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,#071026 0%, #081022 45%, #071228 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:40px 20px;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto}
+
+    /* Header */
+    header.site-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:#04202a}
+    .brand h1{font-family:var(--ff-display);font-size:20px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+
+    /* nav (checkbox hack for mobile) */
+    .nav-toggle{display:none}
+    nav.primary{display:flex;gap:18px;align-items:center}
+    nav.primary a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav.primary a:hover{color:white;background:var(--glass)}
+
+    /* CTA */
+    .cta{background:linear-gradient(90deg,var(--accent) 0%, var(--accent-2) 100%);color:#04202a;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Mobile nav button */
+    .mobile-menu-btn{display:none;align-items:center;gap:10px;padding:8px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04)}
+    .mobile-menu-btn span{display:inline-block;width:20px;height:2px;background:currentColor;border-radius:2px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px}
+    .hero-inner{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);backdrop-filter: blur(6px)}
+    .kicker{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.03);color:var(--accent);font-weight:700;border-radius:999px;font-size:12px}
+    .hero h2{font-family:var(--ff-display);font-size:36px;margin:12px 0}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-outline{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+
+    /* Quick stats */
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:12px;min-width:120px}
+    .stat h3{margin:0;font-size:18px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* Feature card (right column) */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px}
+    .school-info{display:flex;gap:12px;align-items:center}
+    .school-info img{width:72px;height:72px;border-radius:10px;object-fit:cover}
+
+    /* Sections */
+    section{margin-bottom:34px}
+    .grid{display:grid;gap:18px}
+    .three-up{grid-template-columns:repeat(3,1fr)}
+    .two-up{grid-template-columns:repeat(2,1fr)}
+
+    /* Program cards */
+    .program{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .program h4{margin:0 0 8px}
+    .program p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Teachers */
+    .teacher{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:10px;flex-shrink:0;background:linear-gradient(180deg,#123 0%, #235 100%);display:grid;place-items:center;font-weight:700}
+    .teacher h5{margin:0}
+    .teacher p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    /* Events */
+    .event{padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);display:flex;justify-content:space-between;align-items:center}
+    .event .meta{color:var(--muted);font-size:13px}
+
+    /* Contact form */
+    form.contact{display:grid;gap:12px}
+    input, textarea, select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .form-row{display:flex;gap:12px}
+
+    /* Footer */
+    footer{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);display:flex;justify-content:space-between;align-items:center}
+    footer p{margin:0;color:var(--muted)}
+
+    /* Decorative */
+    .glass{background:var(--glass);padding:10px;border-radius:10px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      nav.primary{display:none}
+      .mobile-menu-btn{display:flex}
+      .nav-toggle:checked + nav.primary{display:flex;flex-direction:column;position:absolute;left:20px;right:20px;top:88px;padding:12px;background:linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,0.98));border-radius:12px}
+      .three-up{grid-template-columns:repeat(2,1fr)}
+      .two-up{grid-template-columns:1fr}
+    }
+
+    @media (max-width:640px){
+      body{padding:20px 12px}
+      .three-up{grid-template-columns:1fr}
+      .logo{width:48px;height:48px}
+      .hero h2{font-size:28px}
+      .brand h1{font-size:16px}
+    }
+
+    /* prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      *{transition:none!important}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .center{display:grid;place-items:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" role="banner">
+      <a href="#" class="brand" aria-label="Stellar Academy home">
+        <div class="logo">SA</div>
+        <div>
+          <h1>Stellar Academy</h1>
+          <p>Inspire — Learn — Grow</p>
+        </div>
+      </a>
+
+      <!-- mobile menu toggle -->
+      <label for="nav-toggle" class="mobile-menu-btn" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-hidden="true">
+
+      <nav class="primary" role="navigation" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="Programs.html">Programs</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="apply.html" class="cta">Apply Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <span class="kicker">Open Enrollment 2025</span>
+          <h2>Welcome to Stellar Academy — where curiosity becomes achievement</h2>
+          <p class="lead">We provide a safe, creative, and academically-rigorous environment from Kindergarten through Senior Secondary. Small classes, expert teachers, and a modern approach to learning.</p>
+
+          <div class="actions">
+            <a href="#admissions" class="btn cta">Request Info</a>
+            <a href="#programs" class="btn btn-outline">Explore Programs</a>
+          </div>
+
+          <div class="stats" aria-hidden="true">
+            <div class="stat">
+              <h3>15:1</h3>
+              <p>Student to Teacher</p>
+            </div>
+            <div class="stat">
+              <h3>120+</h3>
+              <p>Clubs & Activities</p>
+            </div>
+            <div class="stat">
+              <h3>95%</h3>
+              <p>Graduation Rate</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" aria-labelledby="welcome-to-school">
+          <h3 id="welcome-to-school">Campus Highlights</h3>
+          <div class="school-info">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%25' height='100%25' fill='%230d1724'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236ee7b7' font-size='22'>Campus</text></svg>" alt="Campus illustration">
+            <div>
+              <p class="muted">Contemporary classrooms, science labs, sports fields, and a thriving arts center — all within a safe campus with excellent transport links.</p>
+              <p style="margin-top:10px;"><strong>Open day:</strong> Saturday, Oct 4, 2025</p>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <a href="#events" class="btn btn-outline">View Events</a>
+            <a href="#contact" class="btn">Contact Admissions</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="container">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px">
+            <div>
+              <h3 style="margin:0;font-family:var(--ff-display)">About Stellar Academy</h3>
+              <p class="muted" style="margin-top:6px">Our mission is to nurture confident, creative, and compassionate learners prepared for a rapidly changing world.</p>
+            </div>
+            <div class="glass" style="font-size:14px">
+              <strong>Founded:</strong> 1998 &nbsp; • &nbsp; <strong>Grades:</strong> K–12
+            </div>
+          </div>
+
+          <div class="grid three-up">
+            <article class="program">
+              <h4>Academic Excellence</h4>
+              <p>Thoughtful curriculum combining foundational knowledge with critical thinking and project-based learning.</p>
+            </article>
+            <article class="program">
+              <h4>Arts & Athletics</h4>
+              <p>Rich co-curricular life: orchestra, drama, robotics, football, basketball and more.</p>
+            </article>
+            <article class="program">
+              <h4>Wellbeing & Support</h4>
+              <p>On-site counselors, learning support, and regular wellness programming for students and families.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programs -->
+      <section id="programs">
+        <h3 style="font-family:var(--ff-display);margin-bottom:12px">Our Programs</h3>
+        <p class="muted" style="margin-top:0">Flexible learning pathways and specialist tracks to match student passions.</p>
+
+        <div class="grid three-up" style="margin-top:14px">
+          <div class="program">
+            <h4>Early Years</h4>
+            <p>Play-based, inquiry-driven classroom for ages 3–6 with forest school sessions and language immersion.</p>
+          </div>
+          <div class="program">
+            <h4>Middle School</h4>
+            <p>Interdisciplinary projects, advisory mentoring, and exploratory electives.</p>
+          </div>
+          <div class="program">
+            <h4>Senior School</h4>
+            <p>Advanced coursework, college guidance, internships, and capstone projects to prepare for the future.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Faculty -->
+      <section id="faculty">
+        <h3 style="font-family:var(--ff-display);margin-bottom:12px">Meet the Faculty</h3>
+        <p class="muted">Experienced, caring educators who put students first.</p>
+
+        <div class="grid two-up" style="margin-top:14px">
+          <div class="teacher program">
+            <div class="avatar">AM</div>
+            <div>
+              <h5>Amara Mensah</h5>
+              <p class="muted">Head of Science — Chemistry & STEM coordinator</p>
+            </div>
+          </div>
+
+          <div class="teacher program">
+            <div class="avatar">DR</div>
+            <div>
+              <h5>David Ruiz</h5>
+              <p class="muted">Head of Humanities — Literature & History</p>
+            </div>
+          </div>
+
+          <div class="teacher program">
+            <div class="avatar">LF</div>
+            <div>
+              <h5>Lillian Ford</h5>
+              <p class="muted">Director of Music & Performing Arts</p>
+            </div>
+          </div>
+
+          <div class="teacher program">
+            <div class="avatar">SK</div>
+            <div>
+              <h5>Sulaiman K.</h5>
+              <p class="muted">Head Coach — Athletics</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events -->
+      <section id="events">
+        <h3 style="font-family:var(--ff-display);margin-bottom:12px">Upcoming Events</h3>
+        <div class="grid" style="grid-template-columns:1fr;gap:12px;margin-top:12px">
+          <div class="event">
+            <div>
+              <strong>Open Day</strong>
+              <div class="meta">Oct 4, 2025 • 09:00 — 13:00</div>
+            </div>
+            <div class="muted">Register</div>
+          </div>
+
+          <div class="event">
+            <div>
+              <strong>Autumn Concert</strong>
+              <div class="meta">Nov 20, 2025 • 18:00 — 20:00 — School Hall</div>
+            </div>
+            <div class="muted">Tickets</div>
+          </div>
+
+          <div class="event">
+            <div>
+              <strong>STEM Fair</strong>
+              <div class="meta">Dec 1, 2025 • Student showcases & awards</div>
+            </div>
+            <div class="muted">Details</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Admissions / Contact -->
+      <section id="admissions">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
+          <div style="flex:1;min-width:300px">
+            <h3 style="font-family:var(--ff-display);margin-bottom:6px">Admissions</h3>
+            <p class="muted">We welcome families from diverse backgrounds. Submit an inquiry to start the application process.</p>
+
+            <div style="margin-top:12px;display:grid;gap:8px">
+              <div class="glass">
+                <strong>Visit:</strong> Mon–Fri, 09:00–16:00
+              </div>
+              <div class="glass">
+                <strong>Phone:</strong> +234 810 000 0000
+              </div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:320px">
+  <h4>Get in touch</h4>
+  <form class="contact" id="contact" action="https://formspree.io/f/mpwjbgdj" method="post" novalidate>
+    
+    <div class="form-row">
+      <label>
+        <input type="text" name="name" placeholder="Full name" required aria-required="true">
+      </label>
+      <label>
+        <input type="email" name="email" placeholder="Email address" required aria-required="true">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>
+        <input type="tel" name="phone" placeholder="Phone (optional)">
+      </label>
+      <label>
+        <select name="interest" aria-label="What are you interested in?">
+          <option>General enquiry</option>
+          <option>Admission</option>
+          <option>Visit / Open day</option>
+        </select>
+      </label>
+    </div>
+
+    <label>
+      <textarea name="message" placeholder="Message/Questions"></textarea>
+    </label>
+
+    <div style="display:flex;gap:8px;align-items:center">
+      <button type="submit" class="btn cta">Send Message</button>
+      <a href="#apply" class="btn btn-outline">Apply Online</a>
+    </div>
+  </form>
+</div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <p>&copy; <span id="year">2025</span> Stellar Academy — All rights reserved.</p>
+        <p class="muted" style="font-size:13px;margin-top:6px">123 Learning Lane • City • Country</p>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="muted" href="#">Privacy</a>
+        <a class="muted" href="#">Terms</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Accessibility: fallback for year without JS (keeps static) -->
+
+</body>
+</html>

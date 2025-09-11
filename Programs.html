@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Programs — Stellar Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://res.cloudinary.com/det5cjrev/image/upload/v1757593028/267acfde-1fe9-4b59-b94a-bd2036be491a_qhxijv.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0f1724;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --glass:rgba(255,255,255,0.04);
+      --radius:14px;
+      --ff-sans:'Inter',system-ui,Arial;
+      --ff-display:'Playfair Display',serif;
+      --max-width:1200px;
+    }
+    body {
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,#071026 0%, #081022 45%, #071228 100%);
+      color:#e6eef6;
+      line-height:1.5;
+    }
+    .container {max-width:var(--max-width);margin:0 auto;padding:40px 20px;}
+    header {display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+    header a {text-decoration:none;color:var(--muted);font-weight:600;margin-left:16px;}
+    header a:hover {color:white;}
+    .logo {width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800;color:#04202a;}
+    /* Hero */
+    .hero {text-align:center;padding:80px 20px;background:linear-gradient(160deg,var(--accent-2),var(--accent));border-radius:var(--radius);margin-bottom:40px;}
+    .hero h1 {font-family:var(--ff-display);font-size:40px;margin:0;color:#04202a;}
+    .hero p {max-width:650px;margin:16px auto;color:#04202a;font-size:18px;}
+    .btn {padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;margin-top:16px;}
+    .btn.cta {background:#04202a;color:white;}
+    .btn.outline {border:2px solid #04202a;color:#04202a;}
+    /* Grid */
+    .grid {display:grid;gap:20px;}
+    .three-up {grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    /* Program cards */
+    .program-card {
+      background:var(--glass);
+      padding:24px;
+      border-radius:var(--radius);
+      transition:transform .25s ease, box-shadow .25s ease;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .program-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.4);
+      border:1px solid var(--accent);
+    }
+    .program-card h3 {margin:0;font-family:var(--ff-display);}
+    .program-card p {margin:0;color:var(--muted);}
+    .program-icon {
+      font-size:28px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#04202a;
+      width:52px;
+      height:52px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      font-weight:700;
+    }
+    /* Extra opportunities */
+    .extra {margin:60px 0;}
+    .extra h2 {font-family:var(--ff-display);}
+    .extra-list {display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+    .extra-item {
+      flex:1;
+      min-width:220px;
+      background:var(--glass);
+      padding:16px;
+      border-radius:var(--radius);
+      transition:transform .25s ease;
+    }
+    .extra-item:hover {transform:translateY(-4px);border:1px solid var(--accent);}
+    /* Footer */
+    footer {text-align:center;padding:20px;color:var(--muted);font-size:14px;margin-top:40px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo">SA</div>
+        <h2>Stellar Academy</h2>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html" style="color:white">Programs</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Our Programs</h1>
+      <p>From Early Years to Senior Secondary, our programs are designed to nurture curiosity, creativity, and character.</p>
+    </section>
+
+    <!-- Overview -->
+    <section style="margin-bottom:40px;text-align:center">
+      <h2 style="font-family:var(--ff-display)">Program Overview</h2>
+      <p class="muted" style="max-width:650px;margin:10px auto">At Stellar Academy, learning is a journey. Each stage of education builds on the last, preparing students with the skills, knowledge, and confidence to thrive in a global world.</p>
+    </section>
+
+    <!-- Program Cards -->
+    <section class="grid three-up">
+      <div class="program-card">
+        <div class="program-icon">🌱</div>
+        <h3>Early Years</h3>
+        <p>Play-based, inquiry-driven classrooms for ages 3–6 with forest school sessions, story circles, and language immersion.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">📚</div>
+        <h3>Primary School</h3>
+        <p>Strong foundations in literacy, numeracy, and science. Project-based learning builds curiosity and problem-solving.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🔬</div>
+        <h3>Middle School</h3>
+        <p>Interdisciplinary projects, advisory mentoring, and electives to encourage independence and teamwork.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🎓</div>
+        <h3>Senior Secondary</h3>
+        <p>Advanced coursework, career counseling, internships, and capstone projects prepare students for higher education.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">⭐</div>
+        <h3>Specialist Tracks</h3>
+        <p>STEM, Arts, Languages, and Sports pathways allow students to explore and excel in their passions.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🎭</div>
+        <h3>Enrichment</h3>
+        <p>Over 120+ clubs and activities including robotics, orchestra, drama, athletics, debate, and community service.</p>
+      </div>
+    </section>
+
+    <!-- Extra Opportunities -->
+    <section class="extra">
+      <h2>Beyond the Classroom</h2>
+      <div class="extra-list">
+        <div class="extra-item">🌍 International exchange programs</div>
+        <div class="extra-item">🏆 Academic & sports competitions</div>
+        <div class="extra-item">🤝 Community service projects</div>
+        <div class="extra-item">🎨 Creative arts showcases</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align:center;margin:60px 0">
+      <h2 style="font-family:var(--ff-display)">Take the Next Step</h2>
+      <p class="muted">Learn more about how to apply and join our vibrant community of learners.</p>
+      <a href="admissions.html" class="btn cta">Admissions Info</a>
+      <a href="index.html#contact" class="btn outline">Contact Us</a>
+    </section>
+
+    <footer>
+      &copy; 2025 Stellar Academy — All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
